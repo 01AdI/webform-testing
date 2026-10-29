@@ -2,8 +2,8 @@ export const ZOHO = {
   actionUrl: "https://crm.zoho.in/crm/WebToLeadForm",
 
   hidden: {
-    xnQsjsdp: "5836e35ee7cd4963204d4e9e55be16965d35096ad343069b554d78363d97e01d",
-    xmIwtLD: "f217f0d32b233ac35a0e45108d2839466adf2bb6f8abcf21f4964b47042fe6be8f51accf28120fba95b7096319e249de",
+    xnQsjsdp: "b31e75cb48b79ff102e3b8d674aec4c6ea4d9f19ebdf7c1fab3df88cc1618ae7",
+    xmIwtLD: "2d3a8266d5e309e200ca87eb6b857cd9c88feea780424950d8890986e38ec313d6ac07ad07ed7e7df7ea30113b4f8a2e",
     actionType: "TGVhZHM=", // base64 for "Leads"
   },
 
