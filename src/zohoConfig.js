@@ -2,8 +2,8 @@ export const ZOHO = {
   actionUrl: "https://crm.zoho.in/crm/WebToLeadForm",
 
   hidden: {
-    xnQsjsdp: "ed068f213597ed0bf402bff7dd41bc9e422d456b53346066f652285ae19cd91e",
-    xmIwtLD: "4c17b0b261a9075180867f19ec02a309ff148c09554208918d42834be806e427475601bedea5a0099a786e93b3e6e814",
+    xnQsjsdp: "5836e35ee7cd4963204d4e9e55be16965d35096ad343069b554d78363d97e01d",
+    xmIwtLD: "f217f0d32b233ac35a0e45108d2839466adf2bb6f8abcf21f4964b47042fe6be8f51accf28120fba95b7096319e249de",
     actionType: "TGVhZHM=", // base64 for "Leads"
   },
 
@@ -29,7 +29,7 @@ export const ZOHO = {
   descriptionField: "",
 
   // Where to send people after a successful submit (also useful for ad conversion tracking).
-  returnURL: "https://webform-testing-pi.vercel.app/thank-you.html",
+  returnURL: "https://webforms-testing.netlify.app/thank-you.html",
 };
 
 // Options for the BHK dropdown (used only if fields.bhk is set)
