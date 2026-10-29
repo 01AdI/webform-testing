@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoho plain form test</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 24px; background: #f4f4f4; }
+  h1 { font-size: 18px; }
+</style>
+</head>
+<body>
+<h1>Zoho plain webform test (not our React form)</h1>
+
+<!-- Zoho's generated snippet. Same keys, fields and scripts; only the decorative CSS is shortened. -->
+<div id='crmWebToEntityForm' class='zcwf_lblLeft crmWebToEntityForm' style='background-color: white;color: black;max-width: 600px;padding:25px;'>
+	<form id='webform1445244000000633002' action='https://crm.zoho.in/crm/WebToLeadForm' name='WebToLeads1445244000000633002' method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory1445244000000633002()' accept-charset='UTF-8'>
+		<input type='text' style='display:none;' name='xnQsjsdp' value='5836e35ee7cd4963204d4e9e55be16965d35096ad343069b554d78363d97e01d'>
+		<input type='hidden' name='zc_gad' id='zc_gad' value=''>
+		<input type='text' style='display:none;' name='xmIwtLD' value='f217f0d32b233ac35a0e45108d2839466adf2bb6f8abcf21f4964b47042fe6be8f51accf28120fba95b7096319e249de'>
+		<input type='text' style='display:none;' name='actionType' value='TGVhZHM='>
+		<input type='text' style='display:none;' name='returnURL' value='https://webforms-testing.netlify.app/thank-you.html'>
+
+		<div style='margin:15px 0;'>
+			<label for='Last_Name'>Last Name <span style='color:red;'>*</span></label><br>
+			<input type='text' id='Last_Name' aria-required='true' aria-label='Last Name' name='Last Name' maxlength='80'>
+		</div>
+		<div style='margin:15px 0;'>
+			<label for='Phone'>Mobile Number</label><br>
+			<input type='text' id='Phone' aria-required='false' aria-label='Phone' name='Phone' maxlength='30'>
+		</div>
+		<div style='margin:15px 0;'>
+			<label for='Email'>Email</label><br>
+			<input type='text' ftype='email' autocomplete='false' id='Email' aria-required='false' aria-label='Email' name='Email' crmlabel='' maxlength='100'>
+		</div>
+
+		<div style='display:none;'>
+			<select id='Lead_Source' aria-label='Lead Source' name='Lead Source'>
+				<option value='-None-'>-None-</option>
+				<option selected value='Website'>Website</option>
+			</select>
+		</div>
+
+		<input type='text' type='hidden' style='display: none;' name='aG9uZXlwb3Q' value=''/>
+
+		<div style='margin:15px 0;'>
+			<input type='submit' id='formsubmit' role='button' class='formsubmit zcwf_button' value='Submit' aria-label='Submit' title='Submit'>
+			<input type='reset' class='zcwf_button' role='button' name='reset' value='Reset' aria-label='Reset' title='Reset'>
+		</div>
+
+		<script>
+			function validateEmail1445244000000633002(){
+				var form = document.forms['WebToLeads1445244000000633002'];
+				var emailFld = form.querySelectorAll('[ftype=email]');
+				var i;
+				for(i = 0; i < emailFld.length; i++ ) {
+					var emailVal = emailFld[i].value;
+					if ((emailVal.replace (/^\s+|\s+$/g,'') ) .length != 0) {
+						var atpos = emailVal.indexOf('@');
+						var dotpos = emailVal.lastIndexOf('.');
+						if(atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+							alert('Please enter a valid email address. ');
+							emailFld[i].focus();
+							return false;
+						}
+					}
+				}
+				return true;
+			}
+			function checkMandatory1445244000000633002(isAjax){
+				var mndFileds = new Array('Last Name');
+				var fldLangVal = new Array('Last Name');
+				for (i = 0; i < mndFileds.length; i++ ) {
+					var fieldObj = document.forms['WebToLeads1445244000000633002'] [mndFileds[i]];
+					if (fieldObj) {
+						if(((fieldObj.value) .replace (/^\s+|\s+$/g,'') ) .length == 0) {
+							alert(fldLangVal[i] + ' cannot be empty.');
+							fieldObj.focus();
+							return false;
+						}
+					}
+				}
+				if ( !validateEmail1445244000000633002 () ) {
+					return false;
+				}
+				document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+			}
+			_wFa_ajax_will_be_replaced = false;
+			if (typeof _wfa_fstprtcken == 'undefined') {
+				_wfa_fstprtcken = {};
+			}
+			_wfa_fstprtcken[1445244000000633002] = true;
+		</script>
+		<!-- Zoho analytics tracking code starts -->
+		<script id='wf_anal' src='https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=75e6e01218c15d72672f14e47d6fc6bdbdc225e15e6a0644b01913968e1055e54991521f7240d5c8f5f3555d1b7d61fdgidc37dd9000c985f87abf6a507f91349e6a491d8489a0d2acf990032c8ab540928gidcb4520968f3a5f74a45d2fd58b8851432e54a7a34eb635abff22b8f241a8816bgid2d4d57dd007f0ef140b57cff4d7de6259fd26206842d930fec24ff431692ea5d&tw=603d3ca4e58fc1a8c3c286b67de1009cababdd51780be188ec7179d0a6e4db7f&version=v2'>
+		</script>
+		<!-- Zoho analytics tracking code ends -->
+	</form>
+</div>
+</body>
+</html>
