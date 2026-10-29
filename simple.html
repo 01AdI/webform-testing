@@ -1,74 +1,197 @@
-
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zoho plain form test</title>
+<title>Zoho Plain Form Test</title>
+
 <style>
-  body { font-family: Arial, sans-serif; padding: 24px; background: #f4f4f4; }
-  h1 { font-size: 18px; }
+  body {
+    font-family: Arial, sans-serif;
+    padding: 24px;
+    background: #f4f4f4;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  #crmWebToEntityForm {
+    background-color: white;
+    color: black;
+    max-width: 600px;
+    padding: 25px;
+  }
+
+  .form-field {
+    margin: 15px 0;
+  }
+
+  .form-field input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+  }
+
+  .required {
+    color: red;
+  }
+
+  .zcwf_button {
+    padding: 10px 16px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
 </style>
 </head>
+
 <body>
-<h1>Zoho plain webform test (not our React form)</h1>
 
-<div id='crmWebToEntityForm' class='zcwf_lblLeft crmWebToEntityForm' style='background-color: white;color: black;max-width: 600px;padding:25px;'>
-  <form id='webform1445244000000633002' action='https://crm.zoho.in/crm/WebToLeadForm' name='WebToLeads1445244000000633002' method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory1445244000000633002()' accept-charset='UTF-8'>
+<h1>Zoho Plain Webform Test</h1>
 
-    <input type='text' style='display:none;' name='xnQsjsdp' value='b31e75cb48b79ff102e3b8d674aec4c6ea4d9f19ebdf7c1fab3df88cc1618ae7'>
-    <input type='hidden' name='zc_gad' id='zc_gad' value=''>
-    <input type='text' style='display:none;' name='xmIwtLD' value='2d3a8266d5e309e200ca87eb6b857cd9c88feea780424950d8890986e38ec313d6ac07ad07ed7e7df7ea30113b4f8a2e'>
-    <input type='text' style='display:none;' name='actionType' value='TGVhZHM='>
-    <input type='text' style='display:none;' name='returnURL' value='https://webforms-testing.netlify.app/thank-you.html'>
+<div id="crmWebToEntityForm" class="zcwf_lblLeft crmWebToEntityForm">
 
-    <div style='margin:15px 0;'>
-      <label for='Last_Name'>Last Name <span style='color:red;'>*</span></label><br>
-      <input type='text' id='Last_Name' aria-required='true' aria-label='Last Name' name='Last Name' maxlength='80'>
+  <form
+    id="webform1445244000000633002"
+    name="WebToLeads1445244000000633002"
+    action="https://crm.zoho.in/crm/WebToLeadForm"
+    method="POST"
+    accept-charset="UTF-8"
+    onsubmit='document.charset="UTF-8"; return checkMandatory1445244000000633002();'
+  >
+
+    <!-- Zoho-generated hidden fields -->
+    <input
+      type="hidden"
+      name="xnQsjsdp"
+      value="b31e75cb48b79ff102e3b8d674aec4c6ea4d9f19ebdf7c1fab3df88cc1618ae7"
+    >
+
+    <input type="hidden" name="zc_gad" id="zc_gad" value="">
+
+    <input
+      type="hidden"
+      name="xmIwtLD"
+      value="2d3a8266d5e309e200ca87eb6b857cd9c88feea780424950d8890986e38ec313d6ac07ad07ed7e7df7ea30113b4f8a2e"
+    >
+
+    <input type="hidden" name="actionType" value="TGVhZHM=">
+
+    <input
+      type="hidden"
+      name="returnURL"
+      value="https://webforms-testing.netlify.app/thank-you.html"
+    >
+
+    <!-- Last Name: Mandatory -->
+    <div class="form-field">
+      <label for="Last_Name">
+        Last Name <span class="required">*</span>
+      </label>
+      <input
+        type="text"
+        id="Last_Name"
+        name="Last Name"
+        maxlength="80"
+        aria-required="true"
+        required
+      >
     </div>
 
-    <div style='margin:15px 0;'>
-      <label for='Company'>Company</label><br>
-      <input type='text' id='Company' aria-required='false' aria-label='Company' name='Company' maxlength='200'>
+    <!-- Company: Mandatory -->
+    <div class="form-field">
+      <label for="Company">
+        Company <span class="required">*</span>
+      </label>
+      <input
+        type="text"
+        id="Company"
+        name="Company"
+        maxlength="200"
+        aria-required="true"
+        required
+      >
     </div>
 
-    <div style='margin:15px 0;'>
-      <label for='Phone'>Mobile Number</label><br>
-      <input type='text' id='Phone' aria-required='false' aria-label='Phone' name='Phone' maxlength='30'>
+    <!-- Mobile Number: Optional -->
+    <div class="form-field">
+      <label for="Phone">Mobile Number</label>
+      <input
+        type="tel"
+        id="Phone"
+        name="Phone"
+        maxlength="30"
+        aria-required="false"
+      >
     </div>
 
-    <div style='margin:15px 0;'>
-      <label for='Email'>Email</label><br>
-      <input type='text' ftype='email' autocomplete='false' id='Email' aria-required='false' aria-label='Email' name='Email' crmlabel='' maxlength='100'>
+    <!-- Email: Optional -->
+    <div class="form-field">
+      <label for="Email">Email</label>
+      <input
+        type="email"
+        id="Email"
+        name="Email"
+        maxlength="100"
+        aria-required="false"
+      >
     </div>
 
-    <div style='display:none;'>
-      <select id='Lead_Source' aria-label='Lead Source' name='Lead Source'>
-        <option value='-None-'>-None-</option>
-        <option selected value='Website'>Website</option>
+    <!-- Lead Source: Website -->
+    <div style="display:none;">
+      <select id="Lead_Source" name="Lead Source" aria-label="Lead Source">
+        <option value="-None-">-None-</option>
+        <option selected value="Website">Website</option>
       </select>
     </div>
 
-    <input type='text' type='hidden' style='display: none;' name='aG9uZXlwb3Q' value=''/>
+    <!-- Zoho honeypot field -->
+    <input
+      type="hidden"
+      name="aG9uZXlwb3Q"
+      value=""
+    >
 
-    <div style='margin:15px 0;'>
-      <input type='submit' id='formsubmit' role='button' class='formsubmit zcwf_button' value='Submit' aria-label='Submit' title='Submit'>
-      <input type='reset' class='zcwf_button' role='button' name='reset' value='Reset' aria-label='Reset' title='Reset'>
+    <!-- Buttons -->
+    <div class="form-field">
+      <input
+        type="submit"
+        id="formsubmit"
+        class="formsubmit zcwf_button"
+        value="Submit"
+        aria-label="Submit"
+      >
+
+      <input
+        type="reset"
+        class="zcwf_button"
+        name="reset"
+        value="Reset"
+        aria-label="Reset"
+      >
     </div>
 
     <script>
       function validateEmail1445244000000633002() {
-        var form = document.forms['WebToLeads1445244000000633002'];
-        var emailFld = form.querySelectorAll('[ftype=email]');
+        var form = document.forms[
+          'WebToLeads1445244000000633002'
+        ];
+
+        var emailFld = form.querySelectorAll('[type="email"]');
 
         for (var i = 0; i < emailFld.length; i++) {
-          var emailVal = emailFld[i].value;
+          var emailVal = emailFld[i].value.trim();
 
-          if (emailVal.trim().length !== 0) {
+          if (emailVal.length !== 0) {
             var atpos = emailVal.indexOf('@');
             var dotpos = emailVal.lastIndexOf('.');
 
-            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+            if (
+              atpos < 1 ||
+              dotpos < atpos + 2 ||
+              dotpos + 2 >= emailVal.length
+            ) {
               alert('Please enter a valid email address.');
               emailFld[i].focus();
               return false;
@@ -79,16 +202,23 @@
         return true;
       }
 
-      function checkMandatory1445244000000633002(isAjax) {
-        var mndFileds = new Array('Last Name');
-        var fldLangVal = new Array('Last Name');
+      function checkMandatory1445244000000633002() {
+        var form = document.forms[
+          'WebToLeads1445244000000633002'
+        ];
+
+        var mndFileds = ['Last Name', 'Company'];
 
         for (var i = 0; i < mndFileds.length; i++) {
-          var fieldObj = document.forms['WebToLeads1445244000000633002'][mndFileds[i]];
+          var fieldObj = form.elements[mndFileds[i]];
 
-          if (fieldObj && fieldObj.value.trim().length === 0) {
-            alert(fldLangVal[i] + ' cannot be empty.');
-            fieldObj.focus();
+          if (!fieldObj || !fieldObj.value.trim()) {
+            alert(mndFileds[i] + ' cannot be empty.');
+
+            if (fieldObj) {
+              fieldObj.focus();
+            }
+
             return false;
           }
         }
@@ -97,24 +227,28 @@
           return false;
         }
 
-        document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+        document.getElementById('formsubmit').disabled = true;
+
+        return true;
       }
 
       _wFa_ajax_will_be_replaced = false;
 
-      if (typeof _wfa_fstprtcken == 'undefined') {
+      if (typeof _wfa_fstprtcken === 'undefined') {
         _wfa_fstprtcken = {};
       }
 
       _wfa_fstprtcken[1445244000000633002] = true;
     </script>
 
-    <!-- Zoho analytics tracking code starts -->
-    <script id='wf_anal' src='https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=60734bba891d159ff316328c30ed88c7fd9d147be1c878c1fadce7382394430d6330b64f80a08f57282f957425cdc7fcgid26ab63a7bc999b2cfab168edd94b1e6a82c82f8fc06ea889b1172452c19544a7gid90d8b1f118e4641f31551853c1c98c3e722587d27a70253b41ab8ff1dc11ea70gidd22a252d12b94b54fc2892c79742b76a7f3d754fdb50d51b216fbded81113fdf64&tw=2c904c937eff7384cfd93315fb4c5211e15d167160470ce45953f5ffe1681f75&version=v2'>
-    </script>
-    <!-- Zoho analytics tracking code ends -->
+    <!-- Zoho analytics tracking -->
+    <script
+      id="wf_anal"
+      src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=60734bba891d159ff316328c30ed88c7fd9d147be1c878c1fadce7382394430d6330b64f80a08f57282f957425cdc7fcgid26ab63a7bc999b2cfab168edd94b1e6a82c82f8fc06ea889b1172452c19544a7gid90d8b1f118e4641f31551853c1c98c3e722587d27a70253b41ab8ff1dc11ea70gidd22a252d12b94b54fc2892c79742b76f3d754fdb50d51b216fbded81113fdf64&tw=2c904c937eff7384cfd93315fb4c5211e15d167160470ce45953f5ffe1681f75&version=v2"
+    ></script>
 
   </form>
 </div>
+
 </body>
 </html>
