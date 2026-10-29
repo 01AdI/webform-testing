@@ -1,4 +1,3 @@
-
 export const ZOHO = {
   actionUrl: "https://crm.zoho.in/crm/WebToLeadForm",
 
@@ -33,3 +32,15 @@ export const ZOHO = {
   returnURL: "https://webform-testing.vercel.app/thank-you.html",
 };
 
+// Options for the BHK dropdown (used only if fields.bhk is set)
+export const BHK_OPTIONS = ["2 BHK", "3 BHK", "4 BHK", "Villa / Plot"];
+
+// Page content
+export const SITE = {
+  brand: "Dream Homes",
+  headline: "Build Your Home",
+  tagline: "Thoughtfully designed residences in prime locations. Share your details and our team will get in touch with pricing and site visit options.",
+  points: ["RERA-registered projects", "Flexible payment plans", "Free site visit & pickup"],
+  heroImage:
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80",
+};
