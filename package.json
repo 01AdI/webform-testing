@@ -1,0 +1,16 @@
+{
+  "name": "zoho-webform-site",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index.html thank-you.html",
+    "build": "parcel build index.html thank-you.html --no-source-maps"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}

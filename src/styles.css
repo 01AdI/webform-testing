@@ -1,0 +1,106 @@
+:root {
+  --ink: #0f2a2a;
+  --gold: #e8c872;
+  --paper: #ffffff;
+  --muted: #5b6b6b;
+  --danger: #c0392b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  color: #fff;
+  background: var(--ink);
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(100deg, rgba(8, 24, 24, 0.82) 0%, rgba(8, 24, 24, 0.55) 55%, rgba(8, 24, 24, 0.35) 100%),
+    var(--hero) center / cover no-repeat,
+    linear-gradient(135deg, #123d3d, #0b1f1f); /* fallback if the image fails to load */
+}
+
+.topbar { padding: 20px 5vw; }
+.brand { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 1.05rem; color: var(--gold); }
+
+.hero {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(320px, 440px) 1fr;
+  gap: 6vw;
+  align-items: center;
+  padding: 2vh 5vw 6vh;
+}
+
+/* ---------- Form (left) ---------- */
+.formCard {
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 28px 26px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+.formCard h2 { margin: 0 0 4px; font-size: 1.45rem; }
+.formCard .sub { margin: 0 0 18px; color: var(--muted); font-size: 0.92rem; }
+
+form label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 14px; }
+form input[type="text"],
+form input[type="tel"],
+form input[type="email"],
+form select {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 13px;
+  font-size: 1rem;
+  border: 1.5px solid #cfd8d8;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--ink);
+}
+form input:focus, form select:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(232, 200, 114, 0.45); }
+
+.consent { display: flex !important; gap: 10px; align-items: flex-start; font-weight: 400 !important; color: var(--muted); font-size: 0.8rem !important; }
+.consent input { margin-top: 3px; }
+
+.error { color: var(--danger); font-size: 0.85rem; margin: 0 0 12px; }
+
+form button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 0;
+  border-radius: 9px;
+  background: var(--gold);
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 0.1s, filter 0.15s;
+}
+form button:hover { filter: brightness(1.05); }
+form button:active { transform: translateY(1px); }
+form button:disabled { opacity: 0.7; cursor: wait; }
+
+/* ---------- Copy (right) ---------- */
+.copy { max-width: 560px; justify-self: end; }
+.eyebrow { text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); font-size: 0.8rem; margin: 0 0 10px; }
+.copy h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.02; margin: 0 0 18px; }
+.tagline { font-size: 1.1rem; line-height: 1.6; opacity: 0.92; margin: 0 0 22px; }
+.copy ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.copy li { padding-left: 28px; position: relative; font-weight: 500; }
+.copy li::before { content: "\2713"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+.foot { padding: 16px 5vw; font-size: 0.78rem; opacity: 0.6; }
+
+/* ---------- Mobile: copy first, form below ---------- */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 0; }
+  .copy { order: -1; justify-self: start; }
+  .copy h1 { font-size: 2.6rem; }
+  .formCard { padding: 22px 18px; }
+}
