@@ -2,8 +2,8 @@ export const ZOHO = {
   actionUrl: "https://crm.zoho.in/crm/WebToLeadForm",
 
   hidden: {
-    xnQsjsdp: "0fcfd28e0605414312296099cc10eeac193edf9f9ba121c13094aad99407750d",
-    xmIwtLD: "e2fe3a3eaf5b3053bade4c3b0a5d0849c1bd33d4166ec11a0678653afd6842a2ce1aced57415151b73d4a2940de1aca9",
+    xnQsjsdp: "ed068f213597ed0bf402bff7dd41bc9e422d456b53346066f652285ae19cd91e",
+    xmIwtLD: "4c17b0b261a9075180867f19ec02a309ff148c09554208918d42834be806e427475601bedea5a0099a786e93b3e6e814",
     actionType: "TGVhZHM=", // base64 for "Leads"
   },
 
@@ -29,7 +29,7 @@ export const ZOHO = {
   descriptionField: "",
 
   // Where to send people after a successful submit (also useful for ad conversion tracking).
-  returnURL: "https://webform-testing.vercel.app/thank-you.html",
+  returnURL: "https://webform-testing-pi.vercel.app/thank-you.html",
 };
 
 // Options for the BHK dropdown (used only if fields.bhk is set)
