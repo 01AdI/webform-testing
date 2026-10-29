@@ -90,7 +90,7 @@ export default function App() {
 
             <label>
               Email
-              <input type="email" name={ZOHO.fields.email} required maxLength={100} placeholder="you@example.com" autoComplete="email" />
+              <input type="email" name={ZOHO.fields.email}  maxLength={100} placeholder="you@example.com" autoComplete="email" />
             </label>
 
             {ZOHO.fields.bhk && (
@@ -104,11 +104,6 @@ export default function App() {
                 </select>
               </label>
             )}
-
-            <label className="consent">
-              <input type="checkbox" required />
-              <span>I agree to be contacted by {SITE.brand} via call, SMS or WhatsApp regarding my enquiry.</span>
-            </label>
 
             {error && <p className="error" role="alert">{error}</p>}
 
