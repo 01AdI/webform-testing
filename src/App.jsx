@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { ZOHO, SITE, BHK_OPTIONS } from "./zohoConfig.js";
 
@@ -43,11 +42,11 @@ export default function App() {
       return;
     }
 
-    // Send the cleaned phone number to Zoho
-    form.elements[ZOHO.fields.phone].value = phone.replace(
-      /^(\+91|91|0)/,
-      ""
-    );
+    // Send the cleaned phone number to Zoho.
+    // Only strip +91 / 91 / 0 when the number is longer than 10 digits, otherwise a real
+    // mobile number that starts with 91 (e.g. 9187654321) would be cut short.
+    form.elements[ZOHO.fields.phone].value =
+      phone.length > 10 ? phone.replace(/^(\+91|91|0)/, "") : phone;
 
     setError("");
     setSubmitting(true);
@@ -110,6 +109,11 @@ export default function App() {
                 value={ZOHO.leadSourceValue}
               />
             )}
+
+            {/* Extra fixed hidden fields (e.g. Sub Source) */}
+            {Object.entries(ZOHO.extraHidden || {}).map(([fieldName, fieldValue]) => (
+              <input key={fieldName} type="hidden" name={fieldName} value={fieldValue} />
+            ))}
 
             <label>
               Full Name
