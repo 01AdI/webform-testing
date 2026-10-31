@@ -1,12 +1,11 @@
-
 export const ZOHO = {
   actionUrl: "https://crm.zoho.in/crm/WebToLeadForm",
 
   hidden: {
     xnQsjsdp:
-      "b31e75cb48b79ff102e3b8d674aec4c6ea4d9f19ebdf7c1fab3df88cc1618ae7",
+      "c3b2535bbd2e492fe116ef9df33f307f54c749e24d8c05d7e923838d06c4ffef",
     xmIwtLD:
-      "2d3a8266d5e309e200ca87eb6b857cd9c88feea780424950d8890986e38ec313d6ac07ad07ed7e7df7ea30113b4f8a2e",
+      "12a7afc0c10b0eda93c9c22b2aee68599ba6c5cc996462da602718b091af64ff4caa1ef89b32be3c183c4f2d89ac8c1f",
     actionType: "TGVhZHM=",
   },
 
@@ -20,10 +19,16 @@ export const ZOHO = {
   leadSourceField: "Lead Source",
   leadSourceValue: "Website",
 
+  // Extra hidden Zoho fields sent with every lead: { "zoho field name": "fixed value" }.
+  // LEADCF3 is the "Sub Source" picklist; the value must match a Zoho option exactly.
+  extraHidden: {
+    LEADCF3: "Dream Homes Landing Page",
+  },
+
   analytics: {
     scriptId: "wf_anal",
     scriptUrl:
-      "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=60734bba891d159ff316328c30ed88c7fd9d147be1c878c1fadce7382394430d6330b64f80a08f57282f957425cdc7fcgid26ab63a7bc999b2cfab168edd94b1e6a82c82f8fc06ea889b1172452c19544a7gid90d8b1f118e4641f31551853c1c98c3e722587d27a70253b41ab8ff1dc11ea70gidd22a252d12b94b54fc2892c79742b76a7f3d754fdb50d51b216fbded81113fdf64&tw=2c904c937eff7384cfd93315fb4c5211e15d167160470ce45953f5ffe1681f75&version=v2",
+      "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=038aca32cb18fccdb7a6da135046fb7e7320f8014d9ae170952cdee7e2606eab32a78f424ad162d6f898f0f094fc3878gid3d3ca7b326726f41cb290f0f6a3ba921b386fd999c018077e0d0a7e7cc0e5954gid5c146213cd2b133057152cd1413596599b642b07ee845f4a266ea3e5aa183129gid43550c244928919385fc7a58458148e377418807dcfb7d26aa9e6ae5886f058a&tw=682ac242b74d75ff8a04c724e7e0cbc25da4e901b117f444a9e946d54c3df000&version=v2",
     formId: "1445244000000633002",
     firstPartyTracking: true,
   },
